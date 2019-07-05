@@ -1,0 +1,93 @@
+\section{Method}
+
+In this section, we will discuss the achievement of the "cashier-free supermarket", and the method what we use in our experiment.
+The main parameters and the relationship between them are shown in the Fig.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=7cm,scale=0.8]{flow.jpg}}
+\caption{Form}
+\label{fig}
+\end{figure}
+
+Draw on the company what we talked about earlier, in order to achieve the goal, there are some items we should design first.
+This scene includes the size of the shelves, the selection of the camera and the shooting angle and shooting range.
+Finally, the recognition system is used to identify the scene.
+The model scene is base on a truth supermarket.
+In our experiment, we try to achieve this goal and apply it to reality.
+Next we will discuss how to build the simulation scenario and the origin of the parameters.
+
+
+\subsection{Multi cameras and Build scene}
+
+In the previous section, we discussed which recognition system is suitable for shopping mall, most of them are small and medium-sized supermarkets, such as FamilyMart, JOETEN, 7-ELEVEN.
+Through a large number of investigations into them, we find that the general pattern of these supermarkets is used strip shelves and parallel emissions.
+Strip shelves and parallel emissions which has the advantages of easy placement and customer selection, this is the most common way to put it on the market.
+It's also suitable for us to use cameras to observe the whole scene and the shelves, we will also use this placement in scene construction.
+And then we draw lessons from their pattern, it can use the Unity3D to achieve the scene.
+We used multi cameras in our simulated scenario, and try to restore the real scene as much as possible.
+The Multi cameras scene is based on field of view(FOV), the horizontal field of view(H-FOV) and vertical field of view(V-FOV)\cite{Ball88} determined the sharpness and size of the pictures what we get.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=2.5cm,scale=0.4]{HFOV.jpg} \includegraphics[width=2.5cm,scale=0.4]{VFOV.jpg}}
+\caption{H-FOV and V-FOV .}
+\label{fig}
+\end{figure}
+
+Fixed focal length lens, it can get the angel field of view(AFOV), and we can get different size of FOV through adjusting the focal length of the lens through different working distances.
+
+\centerline{\includegraphics[width=5cm,scale=0.9]{AFOV-MA.jpg}}
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=9cm,scale=0.9]{AFOV.jpg}}
+\caption{The field of view of lens is related to focal length, f is the focal length, h is the horizontal dimension of the sensor.}
+\label{fig}
+\end{figure}
+
+We can follow the specifications of the scene (shelves size, the length and width of walking, and layout of the whole scene) to adjust FOV.
+
+
+\subsection{Cameras Selected}
+
+The terms "dots per inch" (DPI) and "pixels per inch"(PPI) are used interchangeably by many. A 200 dpi print means that for each inch of that printed material, it takes about 200 dots to make the picture. A pixel is like a square dot without gaps. Both of them can describe the quality of a picture, and some cameras save digital images in arbitrary values as 72 dpi. We can calculate the DPI or PPI for what we need page size in Fig.3.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=8cm,scale=0.9]{DPIPPI.jpg}}
+\caption{Page Size and Optical Resolution}
+\label{fig}
+\end{figure}
+
+FLEXIDOME IP panoramic 7000 MP, which has 12MP / 30 fps sensor for fine details with smooth motion and Intelligent Video Analysis on full panoramic overview. Panoramic surveillance offers full 180бу or 360бу coverage of the designated area. The 360бу version of the camera, when mounted
+centrally on a ceiling, gives complete wall-to-wall coverage. The 180бу version has a higher effective resolution and is ideal for wall mounting or for ceiling
+mounting in corridors.
+
+When mounted at a height of 3.5 m (11.48 ft) the 360бу version of the camera has the following coverage radius for the four levels in Fig.4.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=7cm,scale=0.8]{camera360.jpg}}
+\caption{Page Size and Optical Resolution}
+\label{fig}
+\end{figure}
+
+When mounted at a height of 3.5 m (11.48 ft) the 180бу version of the camera has the following coverage radius for the four levels in Fig.5.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=7cm,scale=0.8]{camera180.jpg}}
+\caption{Page Size and Optical Resolution}
+\label{fig}
+\end{figure}
+
+The camera provides the full resolution circular image for recording even if we are viewing only a portion of the scene.
+Unity3D is a game engine, the engine can be used to create both three-dimensional and two-dimensional games as well as simulations for its many platforms.
+In our experiment, we use Unity3D to build a scene like a truth supermarket, and camera placement experiments are performed in this simulated scene.
+
+\subsection{Item Recognition}
+
+The main method current approaches to object recognition make essential use of machine learning methods and deep learning methods.
+To achieve the item recognition, we can collect larger datasets, learn more powerful models, and use better techniques for preventing overfitting.
+In order to achieve item recognition, we use the YOLOv3 method to train our datasets.
+YOLO means "You only look once, real time object detection explained", it is a new item recognition method, now it has developed to the 3rd generation, it has more accurate recognition rate and ability to process larger amounts of data.
+We will use the YOLOv3 to train image what we get, it is based on OpenCV3.40 and CUDA8.0.
+
+A single GTX 1060 GPU has 6GB of memory, it is enough for us to train examples, therefore we spread the net across GPU.
+We can use the Python Reptile to get image from Internet, then use visual GUI-software for marking bounded boxes of objects and generating annotation files.
+It will create .txt-file for each .jpg-image-file in the same directory and with the same name, but with .txt-extension, and put to file: object number and object coordinates on this image, for each object in new line: object-class, x, y, width, height.
+

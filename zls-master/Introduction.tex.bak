@@ -1,0 +1,22 @@
+An increasing number of convenience stores as well as medium-scale and small-scale supermarkets appears in our surroundings.
+To make a long-term profit, retailers desire to keep their overall cost as low as possible in terms of management, labor, logistics and properties.
+According to the latest news, The Home Depot yearly labor cost 90,444 million, Costco yearly logistics cost 10,444 million.
+Labor costs account for a large part of the operating costs of shopping malls.
+So in recent years, many shopping malls have sought to transform and reduce labor costs with the same profits.
+In recent year, there are many stores that require little or no manual labor, many stores have changed their business model..
+They all use computer identification technology to reduce labor costs, and it has more advantages than traditional shopping malls.
+They have quick checkout and self checkout technology, make people's shopping faster, make the management of operators more convenient.
+
+Meanwhile, a concept of "cashier-free supermarket" is proposed in nowadays, which draws much public attention.
+This technology is undoubtedly the best way to solve the labor cost at present, and over time it will gradually replace the traditional business model.
+The number of unmanned supermarkets is increasing, and it is becoming an emerging business model in the future, for an instance,  the novel idea of ¡°Take it away¡±as announced by Amazon Go.
+Amazon Go, Sam's Club Now and Taocafe are three pioneers that jump into the "cashier-free supermarket" technology and make it come true.
+Amazon Go already started 5 unmanned stores in U.S. and they are planning to open up to 1000 stores till 2020.
+Sensors and camera scan detect the categories and quantities of the products that a customer takes, it can make a preliminary settlement the self operation problems.
+Moreover, with a proper camera layout, more integrated information can be gathered to strengthen our estimation of the quantitative variation of the products\cite{ERDEM2006156}.
+Camera monitoring the purchasing behavior is an important part in a "cashier-free supermarket", and the change from a traditional supermarket to an advanced supermarket can be achieved by upgrading the capabilities and layouts of cameras, to provide an identification feature.
+This paper will discuss the techniques of the modern cameras, mainly about device layouts, items category identification and quantity counting.
+And achieve the establishment of Recognition System, the technology used and the problems solved.
+%layout to cover all scene suitable
+
+

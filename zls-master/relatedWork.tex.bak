@@ -1,0 +1,71 @@
+\section{Related Works}
+\label{sec:rw}
+
+Since the concept of "cashier-free supermarket" was put forward, it has attracted many people's attention.
+It's a new style for shopping, and it is also a new solution which can show you another possibility in the future for command supermarket.
+Saving costs and convenient management are its greatest feature.
+In recent years, most of markets seeking transformation, this gave birth to examples such as Amazon Go and Sam's Club Now and Taocafe which are popular retailers in unmanned supermarket.
+In the unmanned supermarket, all of them use the more advanced identification technology, plus their layout and the choice of camera equipment, realize the idea of "cashier-free supermarket".
+For one of them, Amazon Go stores use a combination of sensors on the shelves, cameras and computer vision with machine learning.
+Different from Amazon Go, Sam's Club pays more attention to camera layout aiming to plan shopping routes, and it use RFID\cite{1192765}.
+Comparing the different retailers in our experiment, then build the camera layout first, then we combine the computer vision and sensor to identity the category and quantity of items.
+
+\subsection{Multi Cameras System}
+
+This is the foundation of "cashier-free supermarket".
+It includes the choice of cameras, the number and placement of cameras in the scene, the angle and depth of field needed for visits.
+In many shopping malls, the most commonly used camera layout is to place the camera on the top of the scene and on the shelves.
+The rationality and feasibility of this layout are fully proved by \cite{1315006}.
+In order to lower the overall cost of the sellers and economize resources, we aim to use the less cameras to cover whole scene while the clearest image can be obtained.
+Through compare the camera layout of various supermarkets and chose one of the best-functioned layouts of cameras for our experiment, which use multi cameras and each camera is responsible for a specific area.
+There are two type cameras which can be used in scene.
+One is one-directional camera placed on the shelf, it requires high resolution in order to obtain high-definition pictures of items for identification.
+Another is four-directional camera on the top of the scene, it is used to assist the camera on the shelf to recognize and observe the whole scene.
+Next, we compare the cameras that are commonly used in the common market.
+\textbf{BOSCH} FLEXIDOME IP panoramic 7000 MP, the camera is widely used in many shopping malls.
+Different from the other cameras, it has the advantages of easy installation, wide viewing angle and fast transmission speed.
+\textbf{AXIS} P3717-PLE is 4-directional cameras, it has reduced bandwidth and storage needs, 360бу IR illumination and remote zoom and focus and flexible positioning of four varifocal camera heads.
+Getting all the information in this area and image obtained for each region are processed separately\cite{}, then we try to adjust the Field of View (FOV) aiming to ensure both, camera coverage maximizing and image clarity\cite{ERDEM2006156}.
+
+\subsection{Computer vision}
+At present, there are many kinds of architectures for computer vision, their slave processing methods and speed are different.
+Two popular computer vision method are You Only Look Once (YOLO) and Regions with CNN features (RCNN)\cite{NIPS2015_5638}\cite{yolov3}.
+They are base on CNN, both of them can use to computer vision and image processing, and they have strong recognition ability. Faster-RCNN is a command technology for researching feature map, and RPN network will complete the full operation of the map before send it to box regression layer and taxonomy\cite{NIPS2015_5638}.
+It has the characteristics of fast and accurate identification of items.
+YOLO just like its name "You Only Look Once", it has faster identification, which has developed to the third generation.
+It is one of the most popular method in image processing area, and it is the first choice for some companies because it is open source and easy to build.
+The YOLO input S*S grid, and every gird is responsible for the objects falling into it, then it can choose the maximal IOU of bounding box\cite{yolov3}.
+Their comparison is shown in the Fig
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=8cm,scale=0.9]{YOLO-FRCNN.jpg}}
+\caption{YOLOv3 is more suitable in state-of-the-art models.}
+\label{fig}
+\end{figure}
+
+RCNN is often used in scenarios requiring more accurate recognition, a method for face detection\cite{7961803}\cite{Li_2015_CVPR}\cite{Yang_2016_CVPR}, to towards Real-Time object detection\cite{NIPS2015_5638}\cite{10.1007/978-3-319-10602-1_26}.
+YOLO can also be used for accurate identification, it is based on the global information of the image to predict, and the error rate is low.
+It can be used to interactive environments\cite{Gordon_2018_CVPR}, modeling behavior from visual data\cite{Ehsani_2018_CVPR}, anticipating visual representations from unlabeled video\cite{Vondrick_2016_CVPR}.
+YOLO is more suitable than Faster-RCNN in our system by comparison.
+YOLOv3 is chosen in our experiment since in processing medium-scale and small-scale supermarkets, it is based on Open Source Computer Vision Library(OpenCV) and Compute Unified Device Architecture(CUDA).
+In the scene, it will put the images captured by the camera into YOLO for category judgment, and then output the results.
+
+\subsection{Weight sensor}
+In "cashier-free supermarket", weight sensor is used to identify the total weight of items, it support a measure about the number of items and assist the identify system.
+Some supermarket already use the weight sensor, Amazon Go use the weight sensors as an assistant to determine the number of items on the shelves.
+
+\subsection{official tones}
+
+Amazon Go officials stressed that they could use computer vision, sensor fusion, and deep learning to make people shopping more convenient.
+The store concept is considered as a revolutionary model which relies on the prevalence of smartphones and geofencing technology to streamline the customer experience, as well as supply chain and inventory management\cite{GREWAL20171} .
+Electronic shelf label (ESL)
+
+
+\subsection{end-user comments}
+
+According to some end-user comments, the existence of trans-era science and technology changes our consumption pattern.
+They think the traditional supermarkets need to be transformed, and it can improve the way of people's shopping.
+Most of people think the new technology can give them a new way for shopping, and the new shopping mode will become the mainstream way of consumption, because it can reduce cost and save much time.
+However, some people think it makes shopping a hassle since Amazon Go omitted the need for closing account by human, and it is hard for the aged to use smartphone, it incurring burden onto customers, and some people can not use the new technology, so the "cashier-free supermarket" promotion is still a problem.
+
+
